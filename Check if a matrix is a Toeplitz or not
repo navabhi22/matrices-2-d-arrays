@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+        Scanner scn = new Scanner(System.in);
+        int M = scn.nextInt();
+      int N = scn.nextInt();
+      int[][] mat = new int[M][N];
+      for(int r=0; r<M; r++){
+          for(int c=0; c<N; c++){
+              mat[r][c]=scn.nextInt();
+          }
+      }
+      System.out.println(isToeplitzMatrix(mat));
+    }
+     public static boolean isToeplitzMatrix(int[][] matrix) {
+        int m=matrix.length;
+        int n =matrix[0].length;
+        for(int r=0; r<m-1; r++){
+            for(int c=0; c<n-1; c++){
+                if(matrix[r][c]!= matrix[r+1][c+1]){
+                    return false;
+                }
+            }
+        }
+        return true;
+        
+    }
+}
