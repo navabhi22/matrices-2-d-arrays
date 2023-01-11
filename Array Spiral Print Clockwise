@@ -1,0 +1,55 @@
+// note take special care of 3X3 matrics
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner scn = new Scanner(System.in);
+        int M = scn.nextInt();
+      int N = scn.nextInt();
+      int[][] mat = new int[N][N];
+      for(int r=0; r<M; r++){
+          for(int c=0; c<N; c++){
+              mat[r][c]=scn.nextInt();
+          }
+      }
+      int re=M-1;
+      int ce=N-1;
+      int count=0;
+      int rs=0;
+      int cs=0;
+
+      while(count<M*N){
+          int c=cs;
+          int r=rs;
+          if(re==rs && ce ==cs ){
+                System.out.print(mat[rs][cs]);
+                break;
+            }
+          for(; c<ce && count<M*N; c++){
+               System.out.print(mat[rs][c]+ ", ");
+               count++;
+          }
+          for(; r<re && count<M*N; r++){
+               System.out.print(mat[r][c]+ ", ");
+               count++;
+          }
+
+          for(; c>cs && count<M*N ; c--){
+               System.out.print(mat[r][c]+ ", ");
+               count++;
+          }
+          for(; r>rs && count<M*N; r--){
+               System.out.print(mat[r][c]+ ", ");
+               count++;
+          }
+          
+          rs++;
+          cs++;
+			re--;
+			ce--;
+      }
+      System.out.print("END");
+     
+    }
+}
+    
