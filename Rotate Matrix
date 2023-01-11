@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+		Scanner scn = new Scanner(System.in);
+        int M = scn.nextInt();
+      int N = M;
+      int[][] mat = new int[M][N];
+      for(int r=0; r<M; r++){
+          for(int c=0; c<N; c++){
+              mat[r][c]=scn.nextInt();
+          }
+      }
+	  rotateImage(mat,M,N);
+    }
+	public static void rotateImage(int[][] mat, int M, int N){
+		for(int r=M-1; r>=0; r--){
+          for(int c=0; c<N; c++){
+              System.out.print(mat[c][r]+" ");
+          	}
+			  System.out.println();
+      	}
+	}
+}
