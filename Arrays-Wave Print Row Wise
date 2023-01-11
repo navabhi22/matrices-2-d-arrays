@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+		Scanner scn = new Scanner(System.in);
+		int r = scn.nextInt();
+		int c = scn.nextInt();
+		int[][] mat = new int[r][c];
+		for(int i=0; i<r;i++){
+			for(int j=0;j<c;j++){
+				mat[i][j]=scn.nextInt();
+			}
+		}
+		print(mat,r,c);
+    }
+	public static void print(int[][] mat,int r,int c){
+		for(int i=0; i<r;i++){
+			if(i%2==0){
+				for(int j=0; j<c;j++){
+				System.out.print(mat[i][j]+", ");
+				}
+			}else{
+				for(int j=c-1; j>=0;j--){
+				System.out.print(mat[i][j]+", ");
+				}
+			}
+			
+		}
+		System.out.print("END");
+	}
+}
